@@ -1,7 +1,7 @@
 {
-  "name": "wheather-cli",
+  "name": "weather-cli",
   "version": "1.0.0",
-  "description": "wheater cli",
+  "description": "weater cli",
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
