@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "weater cli",
   "main": "index.js",
-  "bin": "./index.js",
+  "bin": {
+    "weather": "weather.js"
+  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +18,9 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/faleous/weather-cli-tutor"
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
   }
 }
