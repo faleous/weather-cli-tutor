@@ -21,6 +21,7 @@
     "url": "https://github.com/faleous/weather-cli-tutor"
   },
   "dependencies": {
-    "axios": "^0.27.2"
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1"
   }
 }
