@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { getArgs } from './helpers/args.js';
 import { getWeather } from './services/api.service.js';
-import { printError, printHelp, printSuccess } from './services/log.service.js';
+import { printError, printHelp, printSuccess, printWeather} from './services/log.service.js';
 import { getKeyValue, saveKeyValue } from './services/storage.service.js';
 import { TOKEN_DICTIONARY } from './services/storage.service.js';
 
@@ -32,9 +32,9 @@ const saveCity = async (city) => {
 }
 
 const getForcast = async () => {
+    let weather = {};
     try {
-        const weather = await getWeather(process.env.CITY ?? await getKeyValue(TOKEN_DICTIONARY.city));
-        console.log(weather);
+        weather = await getWeather(process.env.CITY ?? await getKeyValue(TOKEN_DICTIONARY.city));
     } catch(e) {
         if (e?.response?.status == 404) {
             printError('wrong city');
@@ -44,6 +44,7 @@ const getForcast = async () => {
             printError(e.message);
         }
     }
+    printWeather(weather);
 };
 
 const initCLI = () => {
