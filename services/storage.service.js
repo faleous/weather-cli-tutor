@@ -12,7 +12,7 @@ const TOKEN_DICTIONARY = {
 const saveKeyValue = async (key, value) => {
     let data = {};
     if(await isExist(filePath)) {
-        data = savePrevValues();
+        data = await savePrevValues();
     }
 
     data[key] = value;
@@ -29,8 +29,7 @@ const getKeyValue = async (key) => {
 
 const savePrevValues = async () => {
     const file = await fs.promises.readFile(filePath);
-    const data = JSON.parse(file);
-    return data;
+    return JSON.parse(file);
 };
 
 const isExist = async (path) => {

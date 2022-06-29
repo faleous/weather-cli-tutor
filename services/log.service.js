@@ -2,7 +2,7 @@ import chalk from 'chalk';
 
 
 const printError = (error) => {
-    console.log(chalk.bgRed('error' + ' ' + error));
+    console.log(chalk.bgRed('error') + ' ' + error);
 };
 
 const printSuccess = (message) => {
